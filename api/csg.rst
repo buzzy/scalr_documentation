@@ -3,6 +3,8 @@
 Cloud Service Gateway
 =====================
 
+**IMPORTANT:** The Cloud Service Gateway will be deprecated as of the 7.16.10 release. For similar functionality, please see the Scalr Infrastructure as Code Platform here: https://iacp.docs.scalr.com
+
 In order to ensure a consistent multi-cloud experience for cross-cloud automation, policy enforcement, cost visibility, and access control, typically Cloud Management Platforms will enforce limitations on what services are available for consumption by developers.  This can create issues when developers need access to services that are not otherwise available to them, and may result in undesired actions being taken by those users that are contrary to your goals and policies.  Scalr's solution to this conundrum is the Scalr Cloud Service Gateway, or CSG.  By utilizing the CSG, you’ll gain the benefits of cloud management for these services without the previous limitations.
 
 The Scalr CSG acts as a transparent proxy between your applications and cloud provider services   By maintaining this gateway within Scalr, you receive the benefits of complete compatibility with tools, documentation, etc. Developers just point to the CSG endpoint configured and hosted in your Scalr infrastructure and everything works the same as it does for other natively supported cloud service, but you’ll now receive visibility into and control over service consumption.
