@@ -37,8 +37,8 @@ It is completely acceptable to group multiple components onto one virtual machin
 
 Supported Operating Systems:
 -----------------------------
-* RedHat Enterprise Linux 7.x
-* Centos Linux 7.x
+* RedHat Enterprise Linux 7.x or 8.x
+* Centos Linux 7.x or 8.x
 * Debian 7.x or 8.x
 * Ubuntu 16.04, 18.04
 * Amazon Linux 2
