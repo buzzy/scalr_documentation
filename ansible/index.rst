@@ -85,3 +85,10 @@ At a minimum, this will ensure the server is added to the correct Organization, 
    :scale: 70%
 
 .. warning :: Please note! You must click "Prompt on Launch" on "Limit" in the Ansible Tower Job Template to ensure the Template is only ran on the server you are building.
+
+Further, you can specify the SCM branch that should be used by setting that in the Ansible Tower job:
+
+.. image:: /ansible/images/at_scm.png
+   :scale: 50%
+
+.. warning :: Please note! You must be on Ansible Tower >= 3.6 and the project has the ``allow_override`` option enabled
