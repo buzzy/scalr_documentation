@@ -56,6 +56,23 @@ The Bootstrap config can also be added directly into a Farm Role if the Role all
 .. image:: /chef/images/farm_role_chef.png
    :scale: 70%
 
+Chef Policy Files
+^^^^^^^^^^^^^^^^^^^
+
+You have the option of configuring the Chef integration to use either a Chef environment or policy files:
+
+.. image:: /chef/images/chef_policy_file.png
+   :scale: 70%
+
+If you use policy files, you must add the following lines to the client.rb template:
+
+.. code-block:: shell
+
+  use_policyfile true
+  # both options below are required together
+  policy_group "<policy-group-name>"
+  policy_name "<policy-name>"
+
 Troubleshooting
 ----------------
 
