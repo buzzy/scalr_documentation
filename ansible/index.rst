@@ -89,6 +89,6 @@ At a minimum, this will ensure the server is added to the correct Organization, 
 Further, you can specify the SCM branch that should be used by setting that in the Ansible Tower job:
 
 .. image:: /ansible/images/at_scm.png
-   :scale: 70%
+   :scale: 50%
 
 .. warning :: Please note! You must be on Ansible Tower >= 3.6 and the project has the ``allow_override`` option enabled
