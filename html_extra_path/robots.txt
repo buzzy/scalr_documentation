@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /
+
+Sitemap: https://cmp.docs.scalr.com/sitemap.xml

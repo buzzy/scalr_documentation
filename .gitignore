@@ -1,5 +1,9 @@
-.DS_Store
+/.DS_Store
 /.project
 /.idea
-_build/*
-_build/html
+_build/
+/*/.DS_Store
+.DS_Store
+.vscode
+.vscode/settings.json
+/*/*.code-workspace
