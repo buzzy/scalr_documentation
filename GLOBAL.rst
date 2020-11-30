@@ -74,3 +74,9 @@
 .. |BR| raw:: html
 
    <br>
+
+.. |iacp_docs| raw:: html
+
+  <a href="https://docs.scalr.com" target="_blank">here</a>
+
+.. note:: This is the Scalr CMP documentation. Click |iacp_docs| for the Scalr IaCP documentation
