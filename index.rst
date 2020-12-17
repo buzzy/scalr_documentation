@@ -149,6 +149,7 @@ Scalr Documentation
 
    release_notes/index
    release_notes/announcements
+   release_notes/deprecation
    release_notes/labs
 
 .. toctree::
