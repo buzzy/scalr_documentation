@@ -9,35 +9,22 @@ When SAML is activated, it will move the authentication step outside of Scalr an
 
 Configuration
 ^^^^^^^^^^^^^
-To enable SAML, you must configure it in the global config file (/etc/scalr-server/scalr-server.rb).
+To enable SAML, you must configure it in the global area of the Scalr UI. To do this:
 
-SAML support is activated by setting auth_mode=saml in the Scalr configuration file (scalr-server.rb).  Once this is enabled our entityID is https://scalr.server/public/saml?metadata
+1. Log in as a global admin, click on the Scalr icon on the top left and go to IAM -> identity providers:
 
-Example:
+        .. image:: /images/saml_setup.png
+           :width: 500
 
-.. code-block:: ruby
+2. Note down the SP endpoint as that will be used with the SAML provider. For example: ``https://scalr.server/public/saml/idp-sp986542njcvhjv78?metadata`` and ``https://scalr.server/public/saml/idp-sp986542njcvhjv78?acs``
 
-   app[:configuration] = {
-    "scalr" => {
-      "auth_mode" => "saml",
-      "connections" => {
-        "saml" => {
-          "idp" => {
-            "entity_id" => "https://idp.domain/saml/metadata",
-            "single_sign_on_service" => {
-              "url" => "https://your-labs.idp.domain/trust/saml2/http-post/sso"
-            },
-            "single_logout_service" => {
-              "url" => "https://your-labs.idp.domain/trust/saml2/http-redirect/slo"
-            },
-            "cert_fingerprint" => "AA:BB:CC:DD:EE:FF",
-            "cert_fingerprint_algorithm" => "sha256"
-            }
-          }
-        }
-      }
-    }
+3. Fill in the fields required by your SAML provider.
 
-The above is an example, you may need to add/remove fields as necessary. The full list of fields can be found in the :ref:`saml` section of our advanced configurations page.
+4. After you save the SAML configuration, link the provider to an |ACCOUNT|:
+
+        .. image:: /images/saml_account.png
+           :width: 500
+
+.. note:: In the event you need to log in with a local administrator, add the following to the end of your Scalr url to avoid the SAML login screen: ``#?no-login-redirect`` (``https://your.scalrserver.com#?no-login-redirect``)
 
 .. note:: |SCALR_SERVER_RB|
