@@ -5,62 +5,33 @@
 Enable LDAP Authentication
 ===========================
 
-Scalr supports LDAP Authentication and authorization using Active Directory, both for the Web Control Panel and the API.
+When LDAP is activated, it will move the authentication and user management outside of |SCALR| and hand it over to the LDAP server that you have configured. Each |ACCOUNT| in Scalr can have a separate LDAP provider if your organization requires it.
 
 Configuration
 ^^^^^^^^^^^^^
-To enable LDAP, you must configure it in the global config file (/etc/scalr-server/scalr-server.rb).
+To enable LDAP, you must configure it in the global area of the |SCALR| UI. To do this:
 
-.. code-block:: ruby
+1. Log in as a global admin, click on the |SCALR| icon on the top left and go to IAM -> identity providers:
 
-   app[:configuration] = {
-    :scalr => {
-     # Tells Scalr to use LDAP for authentication
-      :auth_mode => 'ldap',
-      :connections => {
-        :ldap => {
-         # Tells Scalr what LDAP server to connect to
-          :bind_type => 'regular',
-          :host => 'ldap://Na.Corp.Company.com',
-          :port => ‘389’,
-        # Tells Scalr what LDAP service account to use when validating users
-          :user => ‘User’,
-          :pass => ‘Password’,
-    # Swap with above for LDAPS
-    #:host => 'ldaps://Na.Corp.Company.com',
-      #:port => '636',
+        .. image:: /images/ldap_setup.png
+           :width: 500
 
-          # Tells Scalr where to look for users and groups
-          :base_dn => 'OU=Accounts Active,OU=Enterprise,DC=Na,DC=Corp,DC=Company,DC=com',
-          :base_dn_groups => 'DC=Na,DC=Corp,DC=Company,DC=com',
+2. Fill in the fields required by your LDAP server.
 
-          # Tells Scalr what attributes to look at
-          :username_attribute => 'sAMAccountName',
-          :groupname_attribute => 'sAMAccountName',
+3. After you save the LDAP configuration, link the provider to an |ACCOUNT|:
 
+        .. image:: /images/ldap_account.png
+           :width: 500
 
-          # Tells Scalr how group membership is represented
-          :group_member_attribute_type => 'member',
+Users and Teams with LDAP
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-          # Tells Scalr to use filters to speed up queries
-          :filter => {
-          :users => '(&(objectClass=user))',
-          :groups => '(&(objectClass=group))',
-          },
+After Scalr has been reconfigured for LDAP, users and teams work as follows.
 
-          # Uncomment for debug output if you can't login
-          :debug => 1,
-        }
-      }
-    }
-  }
-
-    # This will be injected into your ldap.conf
-    # Uncomment and configure cert settings when using ldaps
-    #app[:ldap_configuration] = '
-    #TLS_CACERT /etc/ssl/f5.pem
-    #TLS_CIPHER_SUITE TLSv1+RSA
-
-The above is an example, you may need to add/remove fields as necessary. The full list of fields can be found in the :ref:`ldap` section of our advanced configurations page.
+1. Teams map to AD/LDAP groups. Account admins still have to create teams in |SCALR| but the team name will be validated against the groups in AD/LDAP, so the team name must match the group name.
+2. Teams must linked to at least one |ENVIRONMENT|
+3. Once a team has been linked, any member of the related LDAP group can attempt to login to |SCALR|. On first login a user record gets created in |SCALR| and set as LDAP authenticated.
+4. |SCALR| admin can still create |SCALR| authenticated users to act as global and |ACCOUNT| admins. SAML authenticated users can also be set as global and |ACCOUNT| admins.
+5. If a user has access to more than one account, they will be prompted to select an account during login.
 
 .. note:: |SCALR_SERVER_RB|
