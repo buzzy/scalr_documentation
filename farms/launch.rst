@@ -137,4 +137,7 @@ Allowed Hours enforces automatic suspension or termination of a Farm between the
 
 There is also an :ref:`allowed_hours` policy, if the Account Admin has created this policy and applied it to your |Environment| then this section cannot be modified.
 
-.. note:: Lights Out does not affect running Farms by design. You will need to suspend/resume (or terminate/launch) the Farm to trigger the settings. The default Shutdown Method is Suspend. If you choose Terminate, this will destroy the server and potentially cause data loss.
+.. note:: Lights Out does not affect running Farms by design. You will need to suspend/resume (or terminate/launch)
+the Farm to trigger the settings. It should be done in Lights Out active window, as you will not be able to recycle
+the Farm outside the active window. The default Shutdown Method is Suspend. If you choose Terminate, this will destroy
+the server and potentially cause data loss.
