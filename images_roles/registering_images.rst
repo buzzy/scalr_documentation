@@ -180,3 +180,4 @@ Add the additional details and set the requited options as described below and t
    Size,Enter the size in GB if known or leave blank
    Scalr Agent Installed,Unset this if importing a non-scalarizr image
    Shared,Unset this if you DO NOT want to share this image with lower scopes
+   Compute Resource, Helps to register the same image in different clusters. If you create a Farm Role with the Image that has the compute resource specified, the compute resource will determine the image for a server, and available list of networks for the Farm Role.
