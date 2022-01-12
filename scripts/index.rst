@@ -10,7 +10,8 @@ Definition and Scope
 
 |SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV|
 
-Scripts can be used to automate various configuration items on the operating system that Scalr is provisioning. Scalr supports generic scripting, it is not a proprietary language.
+Scripts can be used to automate various configuration items on the operating system that Scalr is provisioning.
+Scalr supports generic scripting, it is not a proprietary language.
 
 Scripts can be created and stored within Scalr or they can be pulled from a Git Repo at the time of execution.
 
@@ -55,7 +56,11 @@ Once you are in the scripts screen, click on "New Scalr Script":
 Linking a Git Script
 --------------------
 
-Git repositories can be defined before linking a script by navigating to Git Repositories off the main menu |MENU_ENV|. Repositories can also be defined during the script link dialogue. Basic and SSH authentication are supported along with Public repositories.
+If you are going to use Git scripts, the Scalr agent must have a connection to a Git repository to be able
+to do git checkout. Scalr server also needs a connection to validate a Git repository before use.
+Git repositories can be defined before linking a script by navigating to Git Repositories off the main menu |MENU_ENV|.
+Repositories can also be defined during the script link dialogue.
+Basic and SSH authentication are supported along with Public repositories.
 
 .. image:: images/git_repo.png
    :scale: 60%
