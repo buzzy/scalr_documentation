@@ -49,6 +49,10 @@ A Global Admin is generally someone who will add accounts, creates cost centers,
 
 By default a Global Admin will inherit the rights of a Financial Admin as there is no higher permission than Global Admin.
 
+.. note::
+
+If you want to create a user with full access to manage environments, be sure to be logged in as an Account Owner to be able to access the "Allow to manage environments" checkbox.
+
 Financial Admins
 ----------------
 
